@@ -10,33 +10,39 @@ public class PentagonCrazy {
 
 	private void makePrettyThings() {
 		// 1. Create a new Robot
-
+Robot rob = new Robot();
+rob.sparkle();
+rob.changeRobot("https://cdn.theatlantic.com/assets/media/img/mt/2016/09/RTX1GZCO/lead_720_405.jpg?mod=1533691850");
+Robot.setWindowImage("section2/SOVIET.jpg");
 		// 3. Put the robot's pen down
-
+rob.penDown();
+rob.setPenWidth(20);
 		// 8. Make the robot go at maximum speed (100)
-
+rob.setSpeed(100);
 		// 9. Set the pen to a color that you like for the shape
-
 		// 4. Make a variable for the number of sides you want (can’t test this one)
-
+int sides = 5;
 		// 5. Make a second variable for the angle you want the robot to turn. Hint: you can divide in Java using "/". Can’t test until step 6
-
+int angle=360/sides;
 		// 7. Use a for loop to repeat steps #2 to #11, 200 times. When this is done you should see a pentagon
-
+for(int i= 0; i<100000;i++) {
 			// 2. Move the robot 200 pixels
+	rob.setRandomPenColor();
 	
 			// 10. Change the previous line of code to make the robot move "i" pixels instead of 200 
-	
+	rob.move(i);
 			// 6. Turn the robot the amount in your angle variable
-	
+	rob.turn(angle);
 			// 11. Turn the robot one more degree
-
-	}
+rob.turn(1);
+}
+}
+	
 
 	// Variations:
 	// *12. make the pattern really huge
-	// *13. randomize the color of the pattern 
-	// *14. experiment with different shapes
+	// *13. randomize the color of the pattern done
+	// *14. experiment with different shapes 
 
 	public static void main(String[] args) {
 		new PentagonCrazy().makePrettyThings();
